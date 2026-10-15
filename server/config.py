@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT / ".env")
 
 # Identity — rename the assistant here, nowhere else.
-ASSISTANT_NAME = os.getenv("ASSISTANT_NAME", "Kairos")
+ASSISTANT_NAME = os.getenv("ASSISTANT_NAME", "Orion")
 USER_NAME = os.getenv("USER_NAME", "")
 # How it addresses you when it isn't using your name ("sir", "boss", or empty).
 HONORIFIC = os.getenv("HONORIFIC", "sir")

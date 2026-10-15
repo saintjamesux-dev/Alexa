@@ -1,4 +1,4 @@
-# Kairos
+# Orion
 
 A personal, voice-first AI assistant in the spirit of JARVIS. It's built for one person: a product and UI/UX designer building his future. It runs on your **phone and laptop** from the same server, talks back in a deep voice, searches the web for current events, remembers what matters about you, and critiques design screenshots you send it.
 
@@ -69,7 +69,7 @@ Browser support for voice input: Chrome (Android, desktop) and Safari (iPhone, M
 
 ## Ideas for what's next
 
-- Wake word ("Hey Kairos") on the laptop, using a local wake-word engine
+- Wake word ("Hey Orion") on the laptop, using a local wake-word engine
 - Morning briefing: design news, calendar, weather, your goals
 - Calendar and email (Google), Figma and Notion integrations
 - Proactive check-ins on deadlines it remembers
