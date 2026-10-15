@@ -13,6 +13,7 @@ ASSISTANT_NAME = os.getenv("ASSISTANT_NAME", "Orion")
 USER_NAME = os.getenv("USER_NAME", "")
 # How it addresses you when it isn't using your name ("sir", "boss", or empty).
 HONORIFIC = os.getenv("HONORIFIC", "sir")
+HOME_CITY = os.getenv("HOME_CITY", "")
 
 # Brain
 MODEL = os.getenv("MODEL", "claude-opus-5-5")

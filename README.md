@@ -13,6 +13,7 @@ A personal, voice-first AI assistant in the spirit of JARVIS. It's built for one
 - **Current events.** It uses live web search instead of guessing.
 - **Long-term memory.** It quietly saves durable facts (goals, projects, deadlines, people). You can see and delete them in Settings.
 - **Design partner.** Attach a screenshot in text mode and ask for critique.
+- **Morning briefing.** Say "Morning, Orion" or tap the sunrise button for the weather, headlines that matter to a designer, and your deadlines, in about a minute.
 - **Personality.** Calm, dry wit, honest pushback. It's a JARVIS, not a yes-man. Edit `server/persona.py` to shape it.
 
 ## How it's built
@@ -32,23 +33,23 @@ phone / laptop browser  ──►  FastAPI server (your laptop or a cloud box)  
 
 ## Setup
 
-You need Python 3.10+ and a Claude API key from [platform.claude.com](https://platform.claude.com).
+You need **Python 3.10+** ([python.org/downloads](https://www.python.org/downloads/)) and a **Claude API key** from [platform.claude.com](https://platform.claude.com).
 
-```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env        # then fill in ANTHROPIC_API_KEY, ACCESS_CODE, USER_NAME
-uvicorn server.app:app --host 0.0.0.0 --port 8000
-```
+1. Download this repo (on GitHub: **Code → Download ZIP**) and unzip it.
+2. Start Orion:
+   - **Mac:** double-click `start-mac.command`. If macOS blocks it, right-click it, choose **Open**, then **Open** again.
+   - **Windows:** double-click `start-windows.bat`. When installing Python, tick "Add Python to PATH".
+   - **Terminal:** `python3 run.py`
+3. The first time, it asks for your API key, a passcode, your name and your city, then installs everything. After that, it opens straight into Orion in your browser.
 
-Open http://localhost:8000 on the laptop, enter your access code, and tap the orb.
+To stop it, close the window or press Ctrl+C. To change settings later, edit the `.env` file.
 
 ## Using it on your phone
 
 Browsers only allow microphone access over **HTTPS**, so a plain `http://192.168.x.x` address won't hear you. Two good options:
 
 1. **Tailscale (recommended, free, private).** Install [Tailscale](https://tailscale.com) on your laptop and phone, then run `tailscale serve 8000` on the laptop. Your phone gets an `https://…ts.net` address that only your own devices can reach. The catch: the laptop has to be on.
-2. **Host it in the cloud** (Railway, Render or Fly.io) so it's always on. Set the same `.env` values as environment variables there, and give it a persistent disk for `data/` so it keeps its memory.
+2. **Host it in the cloud** so it's always on. See **[DEPLOY.md](DEPLOY.md)** for a step-by-step Railway setup (about $5 a month).
 
 On the phone, open the address and choose **Add to Home Screen**. It then launches full-screen like an app.
 
@@ -70,6 +71,5 @@ Browser support for voice input: Chrome (Android, desktop) and Safari (iPhone, M
 ## Ideas for what's next
 
 - Wake word ("Hey Orion") on the laptop, using a local wake-word engine
-- Morning briefing: design news, calendar, weather, your goals
 - Calendar and email (Google), Figma and Notion integrations
 - Proactive check-ins on deadlines it remembers

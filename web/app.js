@@ -433,6 +433,12 @@ $("lockForm").addEventListener("submit", async (e) => {
 
 // ---------- Wiring ----------
 $("orb").onclick = onTalkPress;
+$("briefingBtn").onclick = () => {
+  unlockAudio();
+  if (state === "thinking") return;
+  stopListening(); stopSpeaking();
+  send("Give me my briefing.", mode);
+};
 $("micBtn").onclick = onTalkPress;
 $("toTextBtn").onclick = () => setMode("text");
 $("toVoiceBtn").onclick = () => setMode("voice");
